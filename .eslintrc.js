@@ -30,4 +30,9 @@ module.exports = {
     quotes: ["warn", "double"],
     semi: ["warn", "always"],
   },
+  settings: {
+    react: {
+      version: "18.2",
+    },
+  },
 };
