@@ -23,4 +23,6 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: Test
+        env:
+          REACT_APP_RESAS_API_KEY: ${{ secrets.REACT_APP_RESAS_API_KEY }}
         run: yarn test
