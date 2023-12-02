@@ -27,6 +27,10 @@ RESAS APIキーを`.env.local`と`src/setupEnv.ts`に書く
 serve
 ```npx serve -s build```
 
+### テスト
+
+環境変数を使用するテストの場合、`src/setupTests.ts`ファイル内の`src/setupEnv.ts`のimportと実行に関する行のコメントアウトを外してください
+
 ## その他コマンド
 
 lint
@@ -34,6 +38,3 @@ lint
 
 フォーマット
 ```yarn format```
-
-テスト
-```yarn test```
