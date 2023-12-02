@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import App from "../App";
 
 // App全体をレンダリングして結合テスト
@@ -11,9 +11,9 @@ describe("integration test", () => {
   });
 
   test("get prefecture", async () => {
-    render(<App />);
-    await screen.findAllByRole("checkbox");
-    const checkboxs = screen.getAllByRole("checkbox");
+    const { getAllByRole } = render(<App />);
+    await waitFor(() => getAllByRole("checkbox"));
+    const checkboxs = getAllByRole("checkbox");
     expect(checkboxs.length).toBe(47); // 47都道府県あるか
   });
 });
