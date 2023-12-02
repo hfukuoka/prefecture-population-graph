@@ -29,6 +29,7 @@ module.exports = {
     "linebreak-style": ["warn", "unix"],
     quotes: ["warn", "double"],
     semi: ["warn", "always"],
+    "@typescript-eslint/no-unused-vars": ["warn"],
   },
   settings: {
     react: {
