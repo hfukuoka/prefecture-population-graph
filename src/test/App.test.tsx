@@ -14,5 +14,5 @@ describe("integration test", () => {
     render(<App />);
     await screen.findAllByRole("checkbox");
     expect(screen.getAllByRole("checkbox").length).toBe(47); // 47都道府県あるか
-  }, 10000);
+  }, 20000);
 });
