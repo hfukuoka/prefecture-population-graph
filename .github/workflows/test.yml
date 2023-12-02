@@ -1,5 +1,5 @@
-# Simple workflow for deploying react app to GitHub Pages
-name: Deploy React App to github pages
+# Test workflow for react app
+name: Test react app
 
 on:
   # Runs on pushes targeting the default branch and pull request
