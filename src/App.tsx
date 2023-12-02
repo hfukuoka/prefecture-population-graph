@@ -5,6 +5,7 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
+      <h1>都道府県人口グラフ</h1>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
