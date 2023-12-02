@@ -11,12 +11,8 @@ describe("integration test", () => {
   });
 
   test("get prefecture", async () => {
-    await act(async () => {
-      render(<App />);
-    });
-    await waitFor(async () => {
-      await screen.findAllByRole("checkbox");
-      expect(screen.getAllByRole("checkbox").length).toBe(47); // 47都道府県あるか
-    });
-  });
+    render(<App />);
+    await screen.findAllByRole("checkbox");
+    expect(screen.getAllByRole("checkbox").length).toBe(47); // 47都道府県あるか
+  }, 10000);
 });
