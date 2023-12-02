@@ -14,8 +14,9 @@ describe("integration test", () => {
     await act(async () => {
       render(<App />);
     });
-    await screen.findAllByRole("checkbox");
-    const checkboxs = screen.getAllByRole("checkbox");
-    expect(checkboxs.length).toBe(47); // 47都道府県あるか
+    await waitFor(async () => {
+      await screen.findAllByRole("checkbox");
+      expect(screen.getAllByRole("checkbox").length).toBe(47); // 47都道府県あるか
+    });
   });
 });
