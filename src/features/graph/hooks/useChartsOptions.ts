@@ -16,7 +16,7 @@ export const useChartsOptions = (
   // セレクトボックスで状態操作を行う
   // 現時点では総人口で固定
   const [populationLabel, setPopulationLabel] =
-    useState<PopulationLabel | null>("総人口");
+    useState<PopulationLabel | null>(null);
 
   // ラベル選択のためのラジオボタンクリック時の動作
   const handleRadioButtonClick = useCallback(
