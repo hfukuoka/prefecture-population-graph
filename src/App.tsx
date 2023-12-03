@@ -4,12 +4,23 @@ import { usePrefecture } from "./hooks/usePrefecture";
 
 function App() {
   // 初期化・State作成
-  const { prefectureDict, prefectureIsChecked, populationCompositionDict } =
-    usePrefecture();
+  const {
+    prefectureDict,
+    prefectureIsChecked,
+    setPrefectureIsChecked,
+    populationCompositionDict,
+    setPopulationCompositionDict,
+  } = usePrefecture();
+
   return (
     <div className="App">
       <h1>都道府県人口グラフ</h1>
-      <PrefectureCheckList prefectureDict={prefectureDict} />
+      <PrefectureCheckList
+        prefectureDict={prefectureDict}
+        setPrefectureIsChecked={setPrefectureIsChecked}
+        populationCompositionDict={populationCompositionDict}
+        setPopulationCompositionDict={setPopulationCompositionDict}
+      />
       <GraphArea
         prefectureIsChecked={prefectureIsChecked}
         populationCompositionDict={populationCompositionDict}
