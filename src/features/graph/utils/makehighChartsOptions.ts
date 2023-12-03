@@ -64,6 +64,9 @@ export const makeHighChartsOptions = (
 
   // グラフ用オプション
   const options: Highcharts.Options = {
+    accessibility: {
+      enabled: false,
+    },
     title: {
       text: label ? String(label) : "",
     },
