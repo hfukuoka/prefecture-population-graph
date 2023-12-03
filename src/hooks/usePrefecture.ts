@@ -34,7 +34,6 @@ export const usePrefecture = () => {
       .then((res: AxiosResponse<PrefecturesResponse>) => {
         const { data } = res;
         const transformedData = prefResponseToDict(data);
-        console.log(data);
 
         // 変数初期化
         setPrefectureDict(transformedData);
