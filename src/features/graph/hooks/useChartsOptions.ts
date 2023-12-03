@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import {
   PopulationCompositionDict,
   PopulationLabel,
@@ -19,12 +19,21 @@ export const useChartsOptions = (
     useState<PopulationLabel | null>("総人口");
 
   // グラフ作成にはラベル・選択都道府県・人口構成のデータ・都道府県コードと都道府県名の対応が必要
-  // 現時点ではダミーデータ使用
-  const options = makeHighChartsOptions(
-    populationLabel,
-    prefectureIsChecked,
-    populationCompositionDict,
-    prefectureDict,
+  // useMemoでグラフオプションをメモ化し不必要な再計算を防ぐ
+  const options = useMemo(
+    () =>
+      makeHighChartsOptions(
+        populationLabel,
+        prefectureIsChecked,
+        populationCompositionDict,
+        prefectureDict,
+      ),
+    [
+      populationLabel,
+      prefectureIsChecked,
+      populationCompositionDict,
+      prefectureDict,
+    ],
   );
 
   return {
