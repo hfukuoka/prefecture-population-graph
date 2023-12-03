@@ -39,6 +39,8 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: Build
+        env:
+          REACT_APP_RESAS_API_KEY: ${{ secrets.REACT_APP_RESAS_API_KEY }}
         run: yarn build
         env:
           PUBLIC_URL: /prefecture-population-graph
