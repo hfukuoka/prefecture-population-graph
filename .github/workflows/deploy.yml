@@ -39,16 +39,14 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: Build
-        env:
-          REACT_APP_RESAS_API_KEY: ${{ secrets.REACT_APP_RESAS_API_KEY }}
         run: yarn build
         env:
           PUBLIC_URL: /prefecture-population-graph
+          REACT_APP_RESAS_API_KEY: ${{ secrets.REACT_APP_RESAS_API_KEY }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: './build'
-
+          path: "./build"
 
   deploy:
     environment:
