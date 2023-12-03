@@ -1,26 +1,12 @@
 import { useState } from "react";
-import {
-  PopulationCompositionDict,
-  PopulationLabel,
-} from "../../../types/population";
-import { PrefectureDict, PrefectureIsChecked } from "../../../types/prefecture";
+import { PopulationLabel } from "../../../types/population";
 import { makeHighChartsOptions } from "../utils/makehighChartsOptions";
 import { allFalsePrefectureIsChecked } from "../../../mocks/allFalsePrefectureIsChecked";
 import { populationCompositionDict11Only } from "../../../mocks/populationCompositionDict11Only";
 import prefectureDict_ from "../../../mocks/prefectureDict";
 
-export type UseChartsOptionsPayload = {
-  prefectureIsChecked: PrefectureIsChecked;
-  populationCompositionDict: PopulationCompositionDict;
-  prefectureDict: PrefectureDict;
-};
-
 // グラフ用オプション作成。
-export const useChartsOptions = (
-  prefectureIsChecked: PrefectureIsChecked,
-  populationCompositionDict: PopulationCompositionDict,
-  prefectureDict: PrefectureDict,
-) => {
+export const useChartsOptions = () => {
   // ラベル
   // セレクトボックスで状態操作を行う
   // 現時点では総人口で固定
