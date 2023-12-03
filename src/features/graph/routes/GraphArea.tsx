@@ -3,6 +3,7 @@ import { PopulationCompositionDict } from "../../../types/population";
 import { PrefectureDict, PrefectureIsChecked } from "../../../types/prefecture";
 import HighchartsReact from "highcharts-react-official";
 import { useChartsOptions } from "../hooks/useChartsOptions";
+import { SelectField } from "../components/SelectField";
 
 type GraphAreaProps = {
   prefectureIsChecked: PrefectureIsChecked;
@@ -16,7 +17,7 @@ export const GraphArea: React.FC<GraphAreaProps> = ({
   populationCompositionDict,
   prefectureDict,
 }) => {
-  const { options } = useChartsOptions(
+  const { options, handleRadioButtonClick } = useChartsOptions(
     prefectureIsChecked,
     populationCompositionDict,
     prefectureDict,
@@ -25,6 +26,7 @@ export const GraphArea: React.FC<GraphAreaProps> = ({
   return (
     <div>
       <HighchartsReact highcharts={Highcharts} options={options} />
+      <SelectField handleClick={handleRadioButtonClick} />
     </div>
   );
 };
