@@ -12,22 +12,25 @@ export const SelectField: React.FC<SelectFieldProps> = ({ handleClick }) => {
     "老年人口",
   ];
   return (
-    <div className="select-field">
-      {labelList.map((label) => {
-        return (
-          <div key={label} className="radio-button-container">
-            <input
-              type="radio"
-              name="label"
-              id={label}
-              onClick={() => {
-                handleClick(label);
-              }}
-            />
-            <label>{label}</label>
-          </div>
-        );
-      })}
+    <div className="select-field-container">
+      <div className="select-field">
+        {labelList.map((label) => {
+          return (
+            <label key={label} className="control control-radio">
+              {label}
+              <input
+                type="radio"
+                name="label"
+                id={label}
+                onClick={() => {
+                  handleClick(label);
+                }}
+              />
+              <div className="control-indicator"></div>
+            </label>
+          );
+        })}
+      </div>
     </div>
   );
 };

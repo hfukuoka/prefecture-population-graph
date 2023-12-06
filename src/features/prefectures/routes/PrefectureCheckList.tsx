@@ -31,7 +31,7 @@ export const PrefectureCheckList: React.FC<PrefectureCheckListProps> = ({
     setPopulationCompositionDict,
   );
   return (
-    <div>
+    <div className="prefecture-check-list">
       {Object.values(prefectureDict).map((value: Prefecture) => (
         <CheckBox
           key={value.prefCode}

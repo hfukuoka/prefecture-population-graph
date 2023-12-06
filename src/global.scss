@@ -1,0 +1,132 @@
+$color--white: #ffffff;
+$color--black: #000000;
+$color--light-grey: #e6e6e6;
+$color--grey: #cccccc;
+$color--dark-grey: #7b7b7b;
+$color--primary: #2aa1c0;
+$color--secondary: #0e647d;
+
+html {
+  font-family: Arial, sans-serif;
+  margin: 10px 10px;
+}
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+h1 {
+  text-align: center;
+  font-size: x-large;
+  font-family: "Alegreya Sans", sans-serif;
+  font-weight: 300;
+  margin-top: 30px;
+  margin-bottom: 5px;
+  // PC・タブレット用
+  @media screen and (min-width: 481px) {
+    font-size: xx-large;
+  }
+}
+
+.prefecture-check-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(115px, 1fr));
+  grid-gap: 0.1em;
+  padding: 30px;
+}
+
+.select-field-container {
+  // width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.select-field {
+  max-width: 700px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-gap: 0.1em;
+  margin: 40px 10px;
+}
+
+.control {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  font-size: 18px;
+
+  // 元々のinput要素は見せない
+  input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  // 自作のチェックボックス・ラジオボタン
+  &-indicator {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background: $color--light-grey;
+
+    .control-radio & {
+      border-radius: 50%;
+    }
+  }
+
+  // ホバー時とフォーカス時は色濃く
+  &:hover input ~ .control-indicator,
+  input:focus ~ .control-indicator {
+    background: $color--grey;
+  }
+
+  // チェックされている時は青
+  input:checked ~ .control-indicator {
+    background: $color--primary;
+  }
+
+  // チェックされていてかつホバーした時は色濃く
+  &:hover input:not([disabled]):checked ~ .control-indicator {
+    background: $color--secondary;
+  }
+
+  // 自作のチェックやラジオボタンの要素
+  // デフォルトだと非表示
+  &-indicator:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  // チェックされている時のみ表示
+  input:checked ~ .control-indicator:after {
+    display: block;
+  }
+
+  // チェックのスタイル
+  &-checkbox &-indicator:after {
+    left: 8px;
+    top: 4px;
+    width: 3px;
+    height: 8px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg); // 長方形を45度回転によってチェックのように見せる
+  }
+
+  // ラジオボタンのスタイル
+  &-radio &-indicator:after {
+    left: 7px;
+    top: 7px;
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background: #fff;
+  }
+}
