@@ -29,9 +29,24 @@ h1 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(115px, 1fr));
   grid-gap: 0.1em;
-  background-color: $color--white;
   padding: 30px;
   margin: 10px 0px;
+}
+
+.select-field-container {
+  // width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.select-field {
+  max-width: 700px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-gap: 0.1em;
+  margin: 40px 10px;
 }
 
 .control {
