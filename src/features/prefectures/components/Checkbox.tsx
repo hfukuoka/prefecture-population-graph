@@ -11,14 +11,17 @@ export const CheckBox: React.FC<CheckboxProps> = ({
   handleClick,
 }) => {
   return (
-    <div className="checkbox">
-      <input
-        id={"checkbox" + prefecture.prefCode}
-        type="checkbox"
-        defaultChecked={false}
-        onClick={() => handleClick(prefecture)}
-      ></input>
-      <label>{prefecture.prefName}</label>
+    <div className="control control-checkbox">
+      <label>
+        {prefecture.prefName}
+        <input
+          id={"checkbox" + prefecture.prefCode}
+          type="checkbox"
+          defaultChecked={false}
+          onClick={() => handleClick(prefecture)}
+        />
+        <div className="control-indicator" />
+      </label>
     </div>
   );
 };
