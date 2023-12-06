@@ -1,6 +1,7 @@
 import { GraphArea } from "./features/graph";
 import { PrefectureCheckList } from "./features/prefectures";
 import { usePrefecture } from "./hooks/usePrefecture";
+import "./global.scss";
 
 function App() {
   // 初期化・State作成
