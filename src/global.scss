@@ -19,6 +19,8 @@ h1 {
   font-size: x-large;
   font-family: "Alegreya Sans", sans-serif;
   font-weight: 300;
+  margin-top: 30px;
+  margin-bottom: 5px;
   // PC・タブレット用
   @media screen and (min-width: 481px) {
     font-size: xx-large;
@@ -30,7 +32,6 @@ h1 {
   grid-template-columns: repeat(auto-fit, minmax(115px, 1fr));
   grid-gap: 0.1em;
   padding: 30px;
-  margin: 10px 0px;
 }
 
 .select-field-container {
