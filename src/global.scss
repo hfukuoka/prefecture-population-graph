@@ -191,9 +191,9 @@ a:hover {
     width: 130px;
     height: 30px;
     font-size: 16px;
-    border: 2px solid #27acd9;
-    background: #27acd9;
-    color: #fff;
+    border: 2px solid $color--primary;
+    background: $color--primary;
+    color: $color--white;
     transition: 0.5s;
     cursor: pointer;
     @media screen and (max-width: 480px) {
