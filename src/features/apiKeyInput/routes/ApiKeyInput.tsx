@@ -14,9 +14,9 @@ export const ApiKeyInputPage = () => {
   return (
     <div>
       <div>
-        <h2>RESAS APIキー</h2>
+        <a href="https://opendata.resas-portal.go.jp/">RESAS API</a>
+        キーを入力してください。
       </div>
-      <div>API呼び出しに使用するRESAS APIキーを指定します。</div>
       <div>
         <input
           type="password"
