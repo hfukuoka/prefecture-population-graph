@@ -1,0 +1,40 @@
+@use "../../../styles/variables" as var;
+
+// 画面ほぼ全体のコンテナ
+.loading-container {
+  height: 80vh;
+}
+
+// ローディングのアイコン
+.loading {
+  // 中央に配置
+  left: calc(50% - 40px);
+  top: calc(50% - 40px);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: solid 6px;
+  border-color: var.$color--primary var.$color--light-grey
+    var.$color--light-grey;
+  position: relative;
+  animation: rotation 1s linear infinite;
+  @media screen and (max-width: 480px) {
+    left: calc(50% - 20px);
+    top: calc(50% - 20px);
+    width: 40px;
+    height: 40px;
+    border: solid 4px;
+    border-color: var.$color--primary var.$color--light-grey
+      var.$color--light-grey;
+  }
+}
+
+// 回転アニメーション
+@keyframes rotation {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

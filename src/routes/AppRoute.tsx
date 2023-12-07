@@ -7,10 +7,5 @@ export const AppRoute = () => {
   const apiKey = useContext(ResasApiKeyContext);
 
   // apiキーを入力したかどうかで場合分け
-  return (
-    <div>
-      <h1>都道府県人口グラフ</h1>
-      {apiKey ? <PrefecturePopulationGraph /> : <ApiKeyInput />}
-    </div>
-  );
+  return <div>{apiKey ? <PrefecturePopulationGraph /> : <ApiKeyInput />}</div>;
 };

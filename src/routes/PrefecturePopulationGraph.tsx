@@ -3,6 +3,7 @@ import { usePrefecture } from "../hooks/usePrefecture";
 import { PrefectureCheckList } from "../features/prefectures";
 import { GraphArea } from "../features/graph";
 import "../styles/prefecturePopulation.scss";
+import { Loading } from "../features/loading";
 
 export const PrefecturePopulationGraph = () => {
   // 初期化・State作成
@@ -21,9 +22,10 @@ export const PrefecturePopulationGraph = () => {
 
   // ローディング中かどうかで場合分け
   return loading ? (
-    <></>
+    <Loading />
   ) : (
     <>
+      <h1>都道府県人口グラフ</h1>
       <PrefectureCheckList
         prefectureDict={prefectureDict}
         setPrefectureIsChecked={setPrefectureIsChecked}

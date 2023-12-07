@@ -29,6 +29,7 @@ describe("integration test", () => {
 
   // タイトルが表示されているか
   test("title", async () => {
+    await screen.findByText("都道府県人口グラフ");
     const linkElement = screen.getByText("都道府県人口グラフ");
     expect(linkElement).toBeInTheDocument(); // タイトルが表示されているか
   });
