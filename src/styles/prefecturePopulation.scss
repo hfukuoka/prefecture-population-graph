@@ -1,53 +1,4 @@
-$color--white: #ffffff;
-$color--black: #000000;
-$color--light-grey: #e6e6e6;
-$color--grey: #cccccc;
-$color--dark-grey: #7b7b7b;
-$color--primary: #2aa1c0;
-$color--secondary: #0e647d;
-
-html {
-  font-family: Arial, sans-serif;
-  margin: 10px 10px;
-}
-
-body {
-  font-family: "Source Sans Pro", sans-serif;
-}
-
-h1 {
-  text-align: center;
-  font-size: xx-large;
-  font-weight: 300;
-  margin-top: 30px;
-  margin-bottom: 5px;
-  // PC・タブレット用
-  @media screen and (max-width: 480px) {
-    font-size: x-large;
-  }
-}
-
-h3 {
-  text-align: center;
-  font-weight: 300;
-  font-size: large;
-  // PC・タブレット用
-  @media screen and (max-width: 480px) {
-    font-size: medium;
-  }
-}
-
-a {
-  position: relative;
-  display: inline-block;
-  transition: 0.3s;
-  // text-decoration: none;
-  color: $color--black;
-}
-
-a:hover {
-  color: $color--secondary;
-}
+@use "variables" as var;
 
 .prefecture-check-list {
   display: grid;
@@ -97,7 +48,7 @@ a:hover {
     left: 0;
     height: 20px;
     width: 20px;
-    background: $color--light-grey;
+    background: var.$color--light-grey;
 
     .control-radio & {
       border-radius: 50%;
@@ -107,17 +58,17 @@ a:hover {
   // ホバー時とフォーカス時は色濃く
   &:hover input ~ .control-indicator,
   input:focus ~ .control-indicator {
-    background: $color--grey;
+    background: var.$color--grey;
   }
 
   // チェックされている時は青
   input:checked ~ .control-indicator {
-    background: $color--primary;
+    background: var.$color--primary;
   }
 
   // チェックされていてかつホバーした時は色濃く
   &:hover input:not([disabled]):checked ~ .control-indicator {
-    background: $color--secondary;
+    background: var.$color--secondary;
   }
 
   // 自作のチェックやラジオボタンの要素
@@ -152,55 +103,5 @@ a:hover {
     width: 6px;
     border-radius: 50%;
     background: #fff;
-  }
-}
-
-// APIキー入力のコンポーネント
-.api-key-input {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 40px 20px;
-
-  input {
-    margin: 20px 20px;
-    width: 300px;
-    height: 40px;
-    font: 14px sans-serif;
-    box-sizing: border-box;
-    transition: 0.3s;
-    letter-spacing: 1px;
-    color: #aaaaaa;
-    border: none;
-    border-bottom: 2px solid #1b2538;
-    background: transparent;
-    box-shadow: 0 0 0px 100px white inset;
-    @media screen and (max-width: 480px) {
-      font: 12px sans-serif;
-    }
-  }
-  input:hover,
-  input:focus {
-    border-bottom: 2px solid $color--primary;
-    outline: none;
-  }
-
-  button {
-    margin: 16px 20px;
-    width: 130px;
-    height: 30px;
-    font-size: 16px;
-    border: 2px solid $color--primary;
-    background: $color--primary;
-    color: $color--white;
-    transition: 0.5s;
-    cursor: pointer;
-    @media screen and (max-width: 480px) {
-      font: 14px sans-serif;
-    }
-    &:hover {
-      transform: scale(1.05, 1.05);
-    }
   }
 }

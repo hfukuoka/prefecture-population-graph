@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import { usePrefecture } from "../hooks/usePrefecture";
 import { PrefectureCheckList } from "../features/prefectures";
 import { GraphArea } from "../features/graph";
+import "../styles/prefecturePopulation.scss";
 
 export const PrefecturePopulationGraph = () => {
   // 初期化・State作成

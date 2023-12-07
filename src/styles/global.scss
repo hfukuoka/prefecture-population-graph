@@ -1,0 +1,44 @@
+@use "variables" as var;
+
+html {
+  font-family: Arial, sans-serif;
+  margin: 10px 10px;
+}
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+h1 {
+  text-align: center;
+  font-size: xx-large;
+  font-weight: 300;
+  margin-top: 30px;
+  margin-bottom: 5px;
+  // PC・タブレット用
+  @media screen and (max-width: 480px) {
+    font-size: x-large;
+  }
+}
+
+h3 {
+  text-align: center;
+  font-weight: 300;
+  font-size: large;
+  // PC・タブレット用
+  @media screen and (max-width: 480px) {
+    font-size: medium;
+  }
+}
+
+a {
+  position: relative;
+  display: inline-block;
+  transition: 0.3s;
+  // text-decoration: none;
+  color: var.$color--black;
+}
+
+a:hover {
+  color: var.$color--secondary;
+}
