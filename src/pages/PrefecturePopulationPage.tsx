@@ -1,6 +1,7 @@
 import { GraphArea } from "../features/graph";
 import { PrefectureCheckList } from "../features/prefectures";
 import { usePrefecture } from "../hooks/usePrefecture";
+import { ApiKeyInputPage } from "./ApiKeyInputPage";
 
 export const PrefecturePopulationPage = () => {
   // 初期化・State作成
@@ -15,6 +16,7 @@ export const PrefecturePopulationPage = () => {
   return (
     <div>
       <h1>都道府県人口グラフ</h1>
+      <ApiKeyInputPage />
       <PrefectureCheckList
         prefectureDict={prefectureDict}
         setPrefectureIsChecked={setPrefectureIsChecked}

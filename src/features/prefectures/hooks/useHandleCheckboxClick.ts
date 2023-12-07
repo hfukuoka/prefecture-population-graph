@@ -58,7 +58,7 @@ export const useHandleCheckboxClick = (
           });
       }
     },
-    [populationCompositionDict, setPopulationCompositionDict],
+    [populationCompositionDict, setPopulationCompositionDict, apiKey],
   );
   return handleCheckboxClick;
 };
