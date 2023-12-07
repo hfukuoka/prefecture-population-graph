@@ -18,6 +18,7 @@ export const PrefecturePopulationGraph = () => {
     return Object.keys(prefectureDict).length === 0;
   }, [prefectureDict]);
 
+  // ローディング中かどうかで場合分け
   return loading ? (
     <></>
   ) : (
