@@ -1,7 +1,7 @@
 import { useCallback, useState, useContext } from "react";
 import { SetResasApiKeyContext } from "../../../provider/ResasApiKey";
 
-export const ApiKeyInputPage = () => {
+export const ApiKeyInput = () => {
   const [apiKeyInput, setApiKeyInput] = useState(""); // コンポーネント内のみのapiキーのstate
   const setApiKey = useContext(SetResasApiKeyContext); // コンテキストとしてapiキー情報を保持
 
@@ -12,11 +12,11 @@ export const ApiKeyInputPage = () => {
   }, [apiKeyInput]);
 
   return (
-    <div>
-      <div>
-        <h2>RESAS APIキー</h2>
-      </div>
-      <div>API呼び出しに使用するRESAS APIキーを指定します。</div>
+    <div className="api-key-input">
+      <h3>
+        <a href="https://opendata.resas-portal.go.jp/">RESAS API</a>
+        キーを入力してください。
+      </h3>
       <div>
         <input
           type="password"

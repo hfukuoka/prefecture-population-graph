@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ApiKeyInputPage } from "../features/apiKeyInput";
+import { ApiKeyInput } from "../features/apiKeyInput";
 import { ResasApiKeyContext } from "../provider/ResasApiKey";
 import { PrefecturePopulationGraph } from "./PrefecturePopulationGraph";
 
@@ -10,7 +10,7 @@ export const AppRoute = () => {
   return (
     <div>
       <h1>都道府県人口グラフ</h1>
-      {apiKey ? <PrefecturePopulationGraph /> : <ApiKeyInputPage />}
+      {apiKey ? <PrefecturePopulationGraph /> : <ApiKeyInput />}
     </div>
   );
 };
