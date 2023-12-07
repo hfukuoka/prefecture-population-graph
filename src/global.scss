@@ -152,6 +152,7 @@ a:hover {
   }
 }
 
+// APIキー入力のコンポーネント
 .api-key-input {
   display: flex;
   flex-direction: column;
@@ -183,6 +184,19 @@ a:hover {
 
   button {
     margin: 16px 20px;
-    width: 120px;
+    width: 130px;
+    height: 30px;
+    font-size: 16px;
+    border: 2px solid #27acd9;
+    background: #27acd9;
+    color: #fff;
+    transition: 0.5s;
+    cursor: pointer;
+    @media screen and (max-width: 480px) {
+      font: 14px sans-serif;
+    }
+    &:hover {
+      transform: scale(1.05, 1.05);
+    }
   }
 }
