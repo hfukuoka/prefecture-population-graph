@@ -13,6 +13,7 @@ export const makeHighChartsOptions = (
   populationCompositionDict: PopulationCompositionDict,
   prefectureDict: PrefectureDict,
 ) => {
+  const today = new Date();
   const series: Highcharts.SeriesOptionsType[] = []; // 複数のy軸データ列とその表示設定
   const categories: string[] = []; // x軸データ列
   let isFirst = true; // x軸データを作成するための初回ループ判定フラグ
@@ -45,6 +46,7 @@ export const makeHighChartsOptions = (
             const allYearPopulationDatas: number[] = [];
             // 各年ループ
             for (const data of allLabelData.data) {
+              if (data.year > today.getFullYear()) break;
               if (isFirst) categories.push(String(data.year)); // 最初の都道府県からx軸データ（年）を作成
               allYearPopulationDatas.push(data.value);
             }
