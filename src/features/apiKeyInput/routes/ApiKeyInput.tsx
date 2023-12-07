@@ -12,11 +12,11 @@ export const ApiKeyInput = () => {
   }, [apiKeyInput]);
 
   return (
-    <div>
-      <div>
+    <div className="api-key-input">
+      <h3>
         <a href="https://opendata.resas-portal.go.jp/">RESAS API</a>
         キーを入力してください。
-      </div>
+      </h3>
       <div>
         <input
           type="password"
