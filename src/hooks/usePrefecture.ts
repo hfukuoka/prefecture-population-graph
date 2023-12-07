@@ -44,12 +44,12 @@ export const usePrefecture = () => {
       .catch((e: AxiosError<{ error: string }>) => {
         console.log(e.message);
       });
-  }, [setPrefectureDict, setPrefectureIsChecked]);
+  }, [setPrefectureDict, setPrefectureIsChecked, apiKey]);
 
   // 初回レンダリング時に都道府県一覧データの取得と各種変数の初期化
   useEffect(() => {
     void getPrefectures();
-  }, []);
+  }, [apiKey]);
 
   return {
     prefectureDict,
