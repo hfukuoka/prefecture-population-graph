@@ -61,6 +61,7 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 40px 20px;
 }
 
 .select-field {
@@ -69,7 +70,6 @@ a:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   grid-gap: 0.1em;
-  margin: 40px 10px;
 }
 
 .control {
@@ -79,6 +79,9 @@ a:hover {
   margin-bottom: 15px;
   cursor: pointer;
   font-size: 18px;
+  @media screen and (max-width: 480px) {
+    font-size: 16px;
+  }
 
   // 元々のinput要素は見せない
   input {
