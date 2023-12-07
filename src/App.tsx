@@ -1,6 +1,6 @@
 import { AppRoute } from "./routes/AppRoute";
 import { ResasApiKeyProvider } from "./provider/ResasApiKey";
-import "./global.scss";
+import "./styles/global.scss";
 
 const App = () => {
   return (
