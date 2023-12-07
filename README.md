@@ -8,12 +8,14 @@ node18を想定
 
 ```yarn install```
 
-### 環境変数
+### テスト用環境変数の設定
 
-```cp .env.local.template .env.local```
+本アプリではユーザーがブラウザ上でAPIキーを手入力する形を想定しています。
+テストでは実際のAPIを使用するため、手入力するAPIキーを環境変数として設定しておく必要があります。
+
 ```cp src/setupEnvTemplate.ts src/setupEnv.ts```
 
-RESAS APIキーを`.env.local`と`src/setupEnv.ts`に書く
+RESAS APIキーを`src/setupEnv.ts`に書く
 
 ### ローカルサーバ立ち上げ（開発用）
 
