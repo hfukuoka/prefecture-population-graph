@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Prefecture Population Graph",
+  "name": "Prefecture Population Graph",
   "icons": [
     {
       "src": "favicon.ico",
