@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import {
   PrefectureDict,
   PrefectureIsChecked,
@@ -8,11 +8,13 @@ import {
 } from "../types/prefecture";
 import axios, { AxiosError, AxiosResponse } from "axios";
 import { PopulationCompositionDict } from "../types/population";
+import { ResasApiKeyContext } from "../provider/ResasApiKey";
 
 // 初期化処理
 export const usePrefecture = () => {
   // 都道府県一覧
   const [prefectureDict, setPrefectureDict] = useState<PrefectureDict>({});
+  const apiKey = useContext(ResasApiKeyContext);
 
   // チェックされているかを管理する変数
   const [prefectureIsChecked, setPrefectureIsChecked] =
@@ -28,7 +30,7 @@ export const usePrefecture = () => {
     await axios
       .get("https://opendata.resas-portal.go.jp/api/v1/prefectures", {
         headers: {
-          "X-API-KEY": process.env.REACT_APP_RESAS_API_KEY,
+          "X-API-KEY": apiKey,
         },
       })
       .then((res: AxiosResponse<PrefecturesResponse>) => {

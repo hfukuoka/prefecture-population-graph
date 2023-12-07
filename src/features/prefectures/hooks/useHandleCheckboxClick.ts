@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, useContext } from "react";
 import {
   PopulationCompositionDict,
   PopulationCompositionResponse,
@@ -6,6 +6,7 @@ import {
 import { Prefecture, PrefectureIsChecked } from "../../../types/prefecture";
 import { AxiosError, AxiosResponse } from "axios";
 import axios from "axios";
+import { ResasApiKeyContext } from "../../../provider/ResasApiKey";
 
 // handleCheckboxClickのロジックを作成
 export const useHandleCheckboxClick = (
@@ -17,6 +18,7 @@ export const useHandleCheckboxClick = (
     React.SetStateAction<PopulationCompositionDict>
   >,
 ) => {
+  const apiKey = useContext(ResasApiKeyContext);
   // useCallbackで関数メモ化
   // 人口構成辞書のStateが変わったときだけ関数を更新
   const handleCheckboxClick = useCallback(
@@ -38,7 +40,7 @@ export const useHandleCheckboxClick = (
             {
               params: { cityCode: "-", prefCode: prefecture.prefCode },
               headers: {
-                "X-API-KEY": process.env.REACT_APP_RESAS_API_KEY,
+                "X-API-KEY": apiKey,
               },
             },
           )

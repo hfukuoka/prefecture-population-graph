@@ -1,34 +1,28 @@
-import { GraphArea } from "./features/graph";
-import { PrefectureCheckList } from "./features/prefectures";
-import { usePrefecture } from "./hooks/usePrefecture";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
+import { PrefecturePopulationPage } from "./pages/PrefecturePopulationPage";
+import { ApiKeyInputPage } from "./pages/ApiKeyInputPage";
+import { ResasApiKeyProvider } from "./provider/ResasApiKey";
+import { RequireApiKey } from "./routes/RequireApiKey";
 import "./global.scss";
 
-function App() {
-  // 初期化・State作成
-  const {
-    prefectureDict,
-    prefectureIsChecked,
-    setPrefectureIsChecked,
-    populationCompositionDict,
-    setPopulationCompositionDict,
-  } = usePrefecture();
-
+const App = () => {
   return (
-    <div className="App">
-      <h1>都道府県人口グラフ</h1>
-      <PrefectureCheckList
-        prefectureDict={prefectureDict}
-        setPrefectureIsChecked={setPrefectureIsChecked}
-        populationCompositionDict={populationCompositionDict}
-        setPopulationCompositionDict={setPopulationCompositionDict}
-      />
-      <GraphArea
-        prefectureIsChecked={prefectureIsChecked}
-        populationCompositionDict={populationCompositionDict}
-        prefectureDict={prefectureDict}
-      />
-    </div>
+    <ResasApiKeyProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <RequireApiKey>
+                <PrefecturePopulationPage />
+              </RequireApiKey>
+            }
+          />
+          <Route path="/apikey" element={<ApiKeyInputPage />} />
+        </Routes>
+      </BrowserRouter>
+    </ResasApiKeyProvider>
   );
-}
+};
 
 export default App;
