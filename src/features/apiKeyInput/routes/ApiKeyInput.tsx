@@ -1,5 +1,5 @@
 import { useCallback, useState, useContext } from "react";
-import { SetResasApiKeyContext } from "../provider/ResasApiKey";
+import { SetResasApiKeyContext } from "../../../provider/ResasApiKey";
 
 export const ApiKeyInputPage = () => {
   const [apiKeyInput, setApiKeyInput] = useState(""); // コンポーネント内のみのapiキーのstate

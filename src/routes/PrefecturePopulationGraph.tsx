@@ -1,9 +1,9 @@
-import { GraphArea } from "../features/graph";
-import { PrefectureCheckList } from "../features/prefectures";
+import { useMemo } from "react";
 import { usePrefecture } from "../hooks/usePrefecture";
-import { ApiKeyInputPage } from "./ApiKeyInputPage";
+import { PrefectureCheckList } from "../features/prefectures";
+import { GraphArea } from "../features/graph";
 
-export const PrefecturePopulationPage = () => {
+export const PrefecturePopulationGraph = () => {
   // 初期化・State作成
   const {
     prefectureDict,
@@ -13,10 +13,16 @@ export const PrefecturePopulationPage = () => {
     setPopulationCompositionDict,
   } = usePrefecture();
 
-  return (
-    <div>
-      <h1>都道府県人口グラフ</h1>
-      <ApiKeyInputPage />
+  // 都道府県一覧リクエストが返ってきているか
+  const loading: boolean = useMemo(() => {
+    return Object.keys(prefectureDict).length === 0;
+  }, [prefectureDict]);
+
+  // ローディング中かどうかで場合分け
+  return loading ? (
+    <></>
+  ) : (
+    <>
       <PrefectureCheckList
         prefectureDict={prefectureDict}
         setPrefectureIsChecked={setPrefectureIsChecked}
@@ -28,6 +34,6 @@ export const PrefecturePopulationPage = () => {
         populationCompositionDict={populationCompositionDict}
         prefectureDict={prefectureDict}
       />
-    </div>
+    </>
   );
 };

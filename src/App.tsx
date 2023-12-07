@@ -1,11 +1,11 @@
-import { PrefecturePopulationPage } from "./pages/PrefecturePopulationPage";
+import { AppRoute } from "./routes/AppRoute";
 import { ResasApiKeyProvider } from "./provider/ResasApiKey";
 import "./global.scss";
 
 const App = () => {
   return (
     <ResasApiKeyProvider>
-      <PrefecturePopulationPage />
+      <AppRoute />
     </ResasApiKeyProvider>
   );
 };
