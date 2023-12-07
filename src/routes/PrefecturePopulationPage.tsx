@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { GraphArea } from "../features/graph";
 import { PrefectureCheckList } from "../features/prefectures";
 import { usePrefecture } from "../hooks/usePrefecture";
-import { ApiKeyInputPage } from "./ApiKeyInputPage";
+import { ApiKeyInputPage } from "../features/apiKeyInput";
 import { ResasApiKeyContext } from "../provider/ResasApiKey";
 
 export const PrefecturePopulationPage = () => {

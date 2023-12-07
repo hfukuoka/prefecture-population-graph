@@ -1,4 +1,4 @@
-import { PrefecturePopulationPage } from "./pages/PrefecturePopulationPage";
+import { PrefecturePopulationPage } from "./routes/PrefecturePopulationPage";
 import { ResasApiKeyProvider } from "./provider/ResasApiKey";
 import "./global.scss";
 
