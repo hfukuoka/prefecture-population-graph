@@ -20,14 +20,14 @@ export const ApiKeyInputPage = () => {
       <div>
         <input
           type="password"
-          placeholder="RESAS-APIキー"
+          placeholder="RESAS APIキー"
           value={apiKeyInput}
           required
           onChange={(e) => setApiKeyInput(e.target.value)}
         />
       </div>
       <div>
-        <input type="submit" value="利用開始" onClick={handleSubmit} />
+        <button onClick={handleSubmit}>利用開始</button>
       </div>
     </div>
   );
