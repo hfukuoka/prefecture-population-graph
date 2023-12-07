@@ -32,7 +32,7 @@ describe("graph utils", () => {
     expect(series?.length).toBe(1); // prefCode11（埼玉）だけ
     if (series) expect(series[0]).toHaveProperty("data");
     if (series && "data" in series[0] && series[0].data)
-      expect(series[0].data.length).toBeGreaterThan(13); // 現在14年分のデータがある
+      expect(series[0].data.length).toBeGreaterThan(12); // 2023年現在で過去13年分のデータがある
     if (series) expect(series[0].name).toBe("埼玉県"); // prefCode11は埼玉
   });
 });
